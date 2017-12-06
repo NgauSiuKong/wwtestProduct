@@ -21,6 +21,10 @@ class ComposerStaticInitde939cfe4a20f6d5e3d57a542a9ec00f
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
         ),
+        'A' => 
+        array (
+            'App\\' => 4,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -32,6 +36,15 @@ class ComposerStaticInitde939cfe4a20f6d5e3d57a542a9ec00f
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/App',
+        ),
+    );
+
+    public static $classMap = array (
+        'DB' => __DIR__ . '/../..' . '/App/model/DB.class.php',
+        'DatabaseOperate' => __DIR__ . '/../..' . '/App/model/DatabaseOperate.class.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -39,6 +52,7 @@ class ComposerStaticInitde939cfe4a20f6d5e3d57a542a9ec00f
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitde939cfe4a20f6d5e3d57a542a9ec00f::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitde939cfe4a20f6d5e3d57a542a9ec00f::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitde939cfe4a20f6d5e3d57a542a9ec00f::$classMap;
 
         }, null, ClassLoader::class);
     }
