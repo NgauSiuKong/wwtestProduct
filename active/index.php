@@ -1,6 +1,12 @@
 <?php
     
-    
+    //testfun();
+    $obj = new DatabaseOperate(0,0,0,0);
+    dump($obj);
+    $objc = new \App\controller\controller1();
+    $objcc = new \App\controller\controller2();
+    dump($objc);
+    dump($objcc);
     $arr = $Smarty->template_dir;
     $arr1 = $Smarty->config_dir;
     $arr2 = $Smarty->plugins_dir;

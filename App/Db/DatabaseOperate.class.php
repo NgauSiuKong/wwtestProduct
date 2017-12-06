@@ -12,9 +12,9 @@
      */
     class DatabaseOperate 
     { 
-        private $host = "niushao.me";//服务器地址
-        private $name = "NiuShao";//数据库用户名
-        private $pwd = "NgauSiu";//数据库登录密码
+        private $host = "112.74.31.36";//服务器地址
+        private $name = "admin";//数据库用户名
+        private $pwd = "admin";//数据库登录密码
         private $dBase = "wwtest";//数据库名称
         private $conn = "";//数据库连接对象
         private $result = "";//结果集
