@@ -1,4 +1,7 @@
 <?php
+/* 
+    操作整个smarty,对smarty整体调用
+*/
 /**
  * Project:     Smarty: the PHP compiling template engine
  * File:        Smarty.class.php
@@ -343,7 +346,7 @@ class Smarty extends Smarty_Internal_TemplateBase
     public $default_config_handler_func = null;
 
     /**
-     * default plugin handler
+     * default plugin handlerleft_delimiter
      *
      * @var callable
      */
@@ -735,9 +738,18 @@ class Smarty extends Smarty_Internal_TemplateBase
      *
      * @var string[]
      */
-    private $accessMap = array('template_dir' => 'TemplateDir', 'config_dir' => 'ConfigDir',
-                               'plugins_dir' => 'PluginsDir', 'compile_dir' => 'CompileDir',
-                               'cache_dir' => 'CacheDir',);
+    private $accessMap = array(
+        //模板目录 D:\install\wamp64\www\wwtestProduct\templates\
+        'template_dir' => 'TemplateDir',
+        //配置文件目录  \install\wamp64\www\wwtestProduct\configs\
+        'config_dir' => 'ConfigDir',
+        //插件目录 D:\install\wamp64\www\wwtestProduct\vendor\smarty\smarty\libs\plugins\
+        'plugins_dir' => 'PluginsDir',
+        //编译缓存文件夹 D:\install\wamp64\www\wwtestProduct\templates_c\
+        'compile_dir' => 'CompileDir',
+        //缓存文件夹 D:\install\wamp64\www\wwtestProduct\cache\
+        'cache_dir' => 'CacheDir',
+        );
 
     /**#@-*/
 
