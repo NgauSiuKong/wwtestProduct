@@ -15,9 +15,16 @@ class selproduct
         }
         return self::$selproductObj;
     }
-    public function selproduct()
+    public function selcountproduct($condition)
     { 
-        $sql = "select * from t_product limit 1000";
+        $sql = "select count(1) from t_product ".$condition;
+        $count = $this->DBObj->getAllArray($sql);
+        //$count = $count['count(1)'];
+        return $count;
+    }
+    public function selproduct($condition);
+    { 
+        $sql = "select * from t_product ".$condition;
         $res_arr = $this->DBObj->getAllArray($sql);
         return $res_arr;
     }
