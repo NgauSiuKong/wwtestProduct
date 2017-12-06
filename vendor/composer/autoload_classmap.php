@@ -8,5 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'DB' => $baseDir . '/App/Db/DB.class.php',
     'DatabaseOperate' => $baseDir . '/App/Db/DatabaseOperate.class.php',
+    'Pagination' => $baseDir . '/App/help/Pagination.php',
     'help' => $baseDir . '/App/help/help.php',
 );

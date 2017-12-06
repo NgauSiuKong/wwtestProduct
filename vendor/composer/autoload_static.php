@@ -45,6 +45,7 @@ class ComposerStaticInitde939cfe4a20f6d5e3d57a542a9ec00f
     public static $classMap = array (
         'DB' => __DIR__ . '/../..' . '/App/Db/DB.class.php',
         'DatabaseOperate' => __DIR__ . '/../..' . '/App/Db/DatabaseOperate.class.php',
+        'Pagination' => __DIR__ . '/../..' . '/App/help/Pagination.php',
         'help' => __DIR__ . '/../..' . '/App/help/help.php',
     );
 
