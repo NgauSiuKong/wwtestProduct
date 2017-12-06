@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'DB' => $baseDir . '/App/operate_mysql/DB.class.php',
-    'DatabaseOperate' => $baseDir . '/App/operate_mysql/DatabaseOperate.class.php',
+    'DB' => $baseDir . '/App/Db/DB.class.php',
+    'DatabaseOperate' => $baseDir . '/App/Db/DatabaseOperate.class.php',
     'help' => $baseDir . '/App/help/help.php',
 );
