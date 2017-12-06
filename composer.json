@@ -9,8 +9,8 @@
 
         },
         "classmap":[ 
-            "App/Db",
-            "App/help"
+            "App/help",
+	    "App/operate_mysql"
         ],
         "file":[ 
             "App/functions/functions.php"

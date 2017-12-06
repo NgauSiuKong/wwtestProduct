@@ -43,8 +43,9 @@ class ComposerStaticInitde939cfe4a20f6d5e3d57a542a9ec00f
     );
 
     public static $classMap = array (
-        'DB' => __DIR__ . '/../..' . '/App/model/DB.class.php',
-        'DatabaseOperate' => __DIR__ . '/../..' . '/App/model/DatabaseOperate.class.php',
+        'DB' => __DIR__ . '/../..' . '/App/operate_mysql/DB.class.php',
+        'DatabaseOperate' => __DIR__ . '/../..' . '/App/operate_mysql/DatabaseOperate.class.php',
+        'help' => __DIR__ . '/../..' . '/App/help/help.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
