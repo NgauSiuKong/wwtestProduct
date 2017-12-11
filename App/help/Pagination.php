@@ -13,7 +13,7 @@
 class Pagination 
 { 
     //每页需要列出的条数
-    private $page_size = 10;
+    private $page_size = 12;
     //构造分页条件
     public function page_condition($page_id,$total)
     { 
