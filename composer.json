@@ -12,7 +12,7 @@
             "App/help",
 	    "App/Db"
         ],
-        "file":[ 
+        "files":[ 
             "./App/functions/functions.php"
         ]
     }
