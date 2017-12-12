@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-12-11 02:51:22
+/* Smarty version 3.1.31, created on 2017-12-12 08:04:28
   from "D:\install\wamp64\www\wwtestProduct\active\templates\list.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5a2df2aa435624_12158288',
+  'unifunc' => 'content_5a2f8d8c4c9ef9_14681226',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '18a3a7f293e4f6dcc24d4cabdbe53001c02345a6' => 
     array (
       0 => 'D:\\install\\wamp64\\www\\wwtestProduct\\active\\templates\\list.html',
-      1 => 1512960677,
+      1 => 1513065841,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.html' => 1,
   ),
 ),false)) {
-function content_5a2df2aa435624_12158288 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a2f8d8c4c9ef9_14681226 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -69,8 +69,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['val']->value) {
                             <tr>
                                 <td align="center"><?php echo $_smarty_tpl->tpl_vars['val']->value['product_id'];?>
 </td>
-                                <td align="center"><?php echo $_smarty_tpl->tpl_vars['val']->value['product_model'];?>
-</td>
+                                <td align="center"><a href="http://www.milchips.com/web/site/product_detail.php?pid=<?php echo $_smarty_tpl->tpl_vars['val']->value['product_id'];?>
+" target="_blank"><?php echo $_smarty_tpl->tpl_vars['val']->value['product_model'];?>
+</a></td>
                                 <td align="center"><?php echo $_smarty_tpl->tpl_vars['val']->value['brand_name'];?>
 </td>
                                 <td align="center"><?php echo $_smarty_tpl->tpl_vars['val']->value['agent_name'];?>

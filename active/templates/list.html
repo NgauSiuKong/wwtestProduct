@@ -37,7 +37,7 @@
                             <{foreach from=$product_list item=val}>
                             <tr>
                                 <td align="center"><{$val.product_id}></td>
-                                <td align="center"><{$val.product_model}></td>
+                                <td align="center"><a href="http://www.milchips.com/web/site/product_detail.php?pid=<{$val.product_id}>" target="_blank"><{$val.product_model}></a></td>
                                 <td align="center"><{$val.brand_name}></td>
                                 <td align="center"><{$val.agent_name}></td>
                                 <td align="center">
