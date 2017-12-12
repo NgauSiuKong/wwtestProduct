@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-12-11 02:40:59
+/* Smarty version 3.1.31, created on 2017-12-12 02:29:45
   from "D:\install\wamp64\www\wwtestProduct\active\templates\header.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5a2df03b28ad17_48145303',
+  'unifunc' => 'content_5a2f3f19955de7_39073059',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b2e0bdd1418a181d61c9db4a9051dfbf1f982cf4' => 
     array (
       0 => 'D:\\install\\wamp64\\www\\wwtestProduct\\active\\templates\\header.html',
-      1 => 1512959438,
+      1 => 1513045781,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a2df03b28ad17_48145303 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a2f3f19955de7_39073059 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html><head>
@@ -41,6 +41,10 @@ function content_5a2df03b28ad17_48145303 (Smarty_Internal_Template $_smarty_tpl)
     <link href="./templates/style/demo.css" rel="stylesheet">
     <link href="./templates/style/typicons.css" rel="stylesheet">
     <link href="./templates/style/animate.css" rel="stylesheet">
+    <style>
+        input[type="radio"]{ opacity:1; position:static !important; vertical-align:middle; text-align:center;}
+        input[type="radio"]:checked{ opacity:1;}
+    </style>
     
 </head>
 <body>

@@ -50,9 +50,29 @@ class selproduct
             ON tpc.productcat_id = tp.productcat_id
             WHERE tp.product_id= ".$id;
         $list = $this->DBObj->getOneArray($sql);
-        $list['price'] = explode(',',$list['price']);
-        $list['quantity'] = explode(',',$list['quantity']);
+        $unit_price = explode(',',$list['price']);
+        $quantity = explode(',',$list['quantity']);
+        $price = array_combine($quantity,$unit_price);
+        $list['price'] = $price;
         return $list;
+    }
+    //查询本项目中的货币分类
+    public function selCurrency()
+    { 
+        $sql = "select currency_id,currency_name,currency_sign from t_currency";
+        $list = $this->DBObj->getAllArray($sql);
+        return $list;
+        $this->DBObj->freeResult();
+    }
+    //查询产品详细分类详细信息
+    public function selproductcat()
+    { 
+        $sql_productcat = "select productcat_id,productcat_name,parentcat_id from t_productcat order by productcat_order desc";
+        $productcat_list = $this->DBObj->getAllArray($sql_productcat);
+        $productcat_list = array_slice($productcat_list,3);
+        $res = recursion($productcat_list,'productcat_id','$parentcat_id',$num=0);
+        echo "<pre>";
+            print_r($res);
     }
     //========================查询结束================================
     //==========================删除==================================

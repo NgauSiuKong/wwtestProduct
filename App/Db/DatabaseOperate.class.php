@@ -137,9 +137,9 @@
          * 释放结果集
          * @author 牛少刚  <NgauSiuKong@gmail.com>
          */
-        public function freeResult($sql)
+        public function freeResult()
         { 
-            mysqli_free_result($result);
+            mysqli_free_result($this->result);
             $this->msg = "";
             $this->fieldsNum = 0;
             $this->rowsNum = 0;
