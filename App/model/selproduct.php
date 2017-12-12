@@ -4,14 +4,16 @@ class selproduct
 { 
     static $selproductObj;
     private $DBObj;
-    private function __construct($DBObj)
+    private $Db;
+    private function __construct($DBObj,$Db)
     { 
         $this->DBObj = $DBObj;
+        $this->Db = $Db;
     }
-    static function getObj($DBObj)
+    static function getObj($DBObj,$Db)
     { 
         if(is_null(self::$selproductObj)){ 
-            self::$selproductObj = new self($DBObj);
+            self::$selproductObj = new self($DBObj,$Db);
         }
         return self::$selproductObj;
     }
@@ -42,7 +44,7 @@ class selproduct
     //查询某商品详细信息,供修改
     public function selProductInfo($id)
     { 
-        $sql="SELECT tp.product_id as productId,product_type,agent_id,agent_name,brand_id,brand_name,product_model, product_stocknum,product_rohs,product_ishot,product_bargain_stock,product_isindex,product_searchstatus,product_order,product_status,product_isconsign,tpp.currency_id as currencyId,group_concat(tpp.purchase_quantity) as quantity,group_concat(tpp.sales_unitprice) as price,tpc.productcat_id as productcatId,tpc.productcat_name
+        $sql="SELECT tp.product_id as productId,product_type,agent_id,agent_name,brand_id,brand_name,product_model, product_stocknum,product_rohs,product_ishot,product_bargain_stock,product_isindex,product_searchstatus,product_order,product_status,product_isconsign,product_datasheet,product_rohs,product_deliverytime,product_deliveryplace,product_batch,product_suspended,isweekly_special,product_eccn,product_stocknum,is_spot,product_package,tpp.currency_id as currencyId,group_concat(tpp.purchase_quantity) as quantity,group_concat(tpp.sales_unitprice) as price,tpc.productcat_id as productcatId,tpc.productcat_name
             FROM t_product AS tp 
             LEFT JOIN t_product_price AS tpp 
             ON tp.product_id = tpp.product_id
@@ -70,9 +72,25 @@ class selproduct
         $sql_productcat = "select productcat_id,productcat_name,parentcat_id from t_productcat order by productcat_order desc";
         $productcat_list = $this->DBObj->getAllArray($sql_productcat);
         $productcat_list = array_slice($productcat_list,3);
-        $res = recursion($productcat_list,'productcat_id','$parentcat_id',$num=0);
-        echo "<pre>";
-            print_r($res);
+        $productcat_list = recursion($productcat_list,'productcat_id','parentcat_id',0,0);
+        foreach($productcat_list as $key => $val){ 
+            $productcat_list[$key]['productcat_name'] = str_repeat('|--',$val['productcat_grade']).$val['productcat_name'];
+        }
+        return $productcat_list;
+    }
+    //查询代理商
+    public function selAgent()
+    { 
+        $sql = "select agent_id,agent_name from t_agent";
+        $list = $this->Db->getAll($sql);
+        return $list;
+    }
+    //查询品牌
+    public function selBrand()
+    { 
+        $sql = "select brand_id,brand_name from t_brand";
+        $list = $this->Db->getAll($sql);
+        return $list;
     }
     //========================查询结束================================
     //==========================删除==================================

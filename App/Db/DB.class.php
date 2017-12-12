@@ -11,12 +11,12 @@ class DB{
   private $charset;
   private $link;
   //私有的构造方法
-  private function __construct(){
-    $this->host =  '112.74.31.36';
+  private function __construct($host,$user,$pass,$db){
+    $this->host = $host;
     //$this->port =  '3306';
-    $this->user =  'root';
-    $this->pass =  'root';
-    $this->db =  'wwtest';
+    $this->user = $user;
+    $this->pass = $pass;
+    $this->db = $db;
     $this->charset= 'utf8';
     //连接数据库
     $this->db_connect();
@@ -49,9 +49,9 @@ class DB{
      die('clone is not allowed');
    }
    //公用的静态方法
-   public static function getIntance(){
+   public static function getIntance($host,$user,$pass,$db){
      if(self::$dbcon==false){
-      self::$dbcon=new self;
+      self::$dbcon=new self($host,$user,$pass,$db);
      }
      return self::$dbcon;
    }

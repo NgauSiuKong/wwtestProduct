@@ -8,4 +8,6 @@
     require_once $path."./smarty.ini.php";
     //实例化数据库类
     $DatabaseOperateObj = new DatabaseOperate(__HOST__,__USER__,__PASS__,__DB__);
+    $Db = DB::getIntance(__HOST__,__USER__,__PASS__,__DB__);
+    
     
