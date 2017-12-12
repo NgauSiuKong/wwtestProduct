@@ -13,7 +13,7 @@
 	    "App/Db"
         ],
         "file":[ 
-            "App/functions/functions.php"
+            "./App/functions/functions.php"
         ]
     }
 }
