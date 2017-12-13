@@ -10,10 +10,10 @@ $res = $selproductObj->selIdExists($product_id);
 if(!$res){echo('该商品在数据库中不存在');die();}
 $del_res = $selproductObj->delProduct($product_id);
 if($del_res){ 
-    echo "删除成功,三秒后跳转";
-    header('refresh:3;url=http://localhost/wwtestProduct/index.php');
+    echo "<h1>删除成功,2秒后跳转</h1>";
+    header('refresh:2;url=http://localhost/wwtestProduct/index.php');
 }else{ 
-    echo "删除失败,请重试,三秒后跳转";
+    echo "<h1>删除失败,请重试,三秒后跳转</h1>";
     header('refresh:3;url=http://localhost/wwtestProduct/index.php');
 }
 

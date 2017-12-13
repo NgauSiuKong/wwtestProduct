@@ -4,7 +4,7 @@ require_once "./public.php";
 $bool_reg = preg_match('/\d+/',$_GET['product_id']);
 if(!$bool_reg){echo('url错误');die();}
 $product_id = $_GET['product_id'];
-$selproductObj = App\model\selproduct::getObj($DatabaseOperateObj,$Db);
+//$selproductObj = App\model\selproduct::getObj($DatabaseOperateObj,$Db);
 //验证要删除的商品是否存在
 $res = $selproductObj->selIdExists($product_id);
 if(!$res){echo('该商品在数据库中不存在');die();}

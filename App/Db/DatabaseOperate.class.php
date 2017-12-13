@@ -25,6 +25,7 @@
         private $rowsRst = "";
         private $filesArray = array();
         private $rowsArray = array();
+        public $mysqli;
         /**
          * 构造函数,实现数据库连接,默认设置本地
          * @param $host
@@ -48,6 +49,7 @@
         public function init_conn()
         { 
             $this->conn = @mysqli_connect($this->host,$this->name,$this->pwd,$this->dBase);
+            $this->mysqli = new mysqli($this->host,$this->name,$this->pwd,$this->dBase);
             mysqli_set_charset($this->conn,'utf8');
         }
         /**
@@ -132,6 +134,23 @@
             }else{ 
                 return "Connect failed:".mysqli_connect_error();
             }
+        }
+        //事务处理
+        public function beginCommit()
+        { 
+            $this->mysqli->autocommit(false);
+        }
+        public function submitCommit()
+        { 
+            $this->mysqli->commit();
+        }
+        public function stopCommit()
+        { 
+            $this->mysqli->autocommit(true);
+        }
+        public function rollback()
+        { 
+            $this->mysqli->rollback();
         }
         /**
          * 释放结果集

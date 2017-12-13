@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-12-12 07:49:30
+/* Smarty version 3.1.31, created on 2017-12-13 03:52:28
   from "D:\install\wamp64\www\wwtestProduct\active\templates\edit.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5a2f8a0a5a0c71_40692952',
+  'unifunc' => 'content_5a30a3fce29d14_20303348',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4f9e4d61d7fb14f3f53ae2537f2cde8c513c0e76' => 
     array (
       0 => 'D:\\install\\wamp64\\www\\wwtestProduct\\active\\templates\\edit.html',
-      1 => 1513064967,
+      1 => 1513137137,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.html' => 1,
   ),
 ),false)) {
-function content_5a2f8a0a5a0c71_40692952 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a30a3fce29d14_20303348 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -52,7 +52,8 @@ $_smarty_tpl->_subTemplateRender("file:header.html", $_smarty_tpl->cache_id, $_s
             </div>
             <div class="widget-body">
                 <div id="horizontal-form">
-                    <form class="form-horizontal" role="form" action="" method="post">
+                    <form class="form-horizontal" action="./edit_action.php" method="post">
+                    <!--
                         <div class="form-group">
                             <label for="username" class="col-sm-2 control-label no-padding-right">栏目类别</label>
                             <div class="col-sm-6">
@@ -62,7 +63,7 @@ $_smarty_tpl->_subTemplateRender("file:header.html", $_smarty_tpl->cache_id, $_s
                             </div>
                             <p class="help-block col-sm-4 red">* 必填</p>
                         </div>
-
+                    -->
                         <div class="form-group">
                             <label for="group_id" class="col-sm-2 control-label no-padding-right">分类</label>
                             <div class="col-sm-6">
@@ -91,7 +92,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
                             <div class="col-sm-6">
                                 <input class="form-control" id="title" value="<?php echo $_smarty_tpl->tpl_vars['product_info']->value['product_model'];?>
 " name="product_model" value="文档" required type="text">
-
+                                <input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['product_info']->value['productId'];?>
+" name="product_id"/>
                             </div>
                             <p class="help-block col-sm-4 red">* 必填</p>
                         </div>
@@ -172,15 +174,15 @@ $_smarty_tpl->tpl_vars['__smarty_foreach_pricename']->value['iteration']++;
                             <div class="col-sm-3">
                             
                              <input class="form-control" id="title" value="<?php echo $_smarty_tpl->tpl_vars['val']->value;?>
-" name="sales_unitprice<?php echo (isset($_smarty_tpl->tpl_vars['__smarty_foreach_pricename']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_foreach_pricename']->value['iteration'] : null);?>
-" value="价格1" required type="text">
+" name="sales_unitprice[<?php echo (isset($_smarty_tpl->tpl_vars['__smarty_foreach_pricename']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_foreach_pricename']->value['iteration'] : null);?>
+]" value="价格1" required type="text">
                             </div>
                             <label for="group_id" class="col-sm-1 control-label no-padding-right<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
 ">数量</label>
                                   <div class="col-sm-3">
                           <input class="form-control" id="title" value="<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
-" name="purchase_quantity<?php echo (isset($_smarty_tpl->tpl_vars['__smarty_foreach_pricename']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_foreach_pricename']->value['iteration'] : null);?>
-" value="数量1" required type="text">
+" name="purchase_quantity[<?php echo (isset($_smarty_tpl->tpl_vars['__smarty_foreach_pricename']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_foreach_pricename']->value['iteration'] : null);?>
+]" value="数量1" required type="text">
                             </div>
                         </div>
                         <?php
@@ -274,9 +276,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
                             </div>
                         </div>
                         <!--保存修改信息-->
+                        
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-default">保存信息</button>
+                                <input type="submit" class="btn btn-default"  value="确认修改">
                             </div>
                         </div>
                     </form>
@@ -293,6 +296,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
         </div>  
     </div>
 
+<?php echo '<script'; ?>
+ type="text/javascript" src="./templates/style/edit.js"><?php echo '</script'; ?>
+>
 <?php $_smarty_tpl->_subTemplateRender("file:footer.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }
 }

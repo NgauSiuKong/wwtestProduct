@@ -92,7 +92,64 @@ class selproduct
         $list = $this->Db->getAll($sql);
         return $list;
     }
+    //查询单个代理商
+    public function seloneAgent($id)
+    { 
+        $sql = "select agent_id,agent_name from t_agent where agent_id=".$id;
+        $list = $this->Db->getAll($sql);
+        return $list['0']['agent_name'];
+    }
+    //查询单个品牌
+    public function seloneBrand($id)
+    { 
+        $sql = "select brand_id,brand_name from t_brand where brand_id=".$id;
+        $list = $this->Db->getAll($sql);
+        return $list[0]['brand_name'];
+    }
+    //查询该商品是否有价格
+    public function ifExistsPrice($id)
+    { 
+        $sql = "select count(1) as c from t_product_price where product_id=".$id;
+        $res = $this->Db->getAll($sql);
+        if($res[0]['c']){ 
+            return true;
+        }else{ 
+            return false;
+        }
+    }
     //========================查询结束================================
+    //==========================添加=============================
+    public function upInsertPrice($arr,$curid,$proid)
+    { 
+        /*
+        $str1 = "INSERT INTO t_product_price (`product_id`,`sales_unitprice`,`purchase_quantity`,`currency_id`) VALUES ";
+        $str2 = "";
+        foreach($arr as $key => $val){ 
+            $str2 .= "({$proid},'{$val}','{$key}','{$curid}'),";
+        }
+        $sql = $str1.trim($str2,',');
+        */
+        $sql = upInsertPriceFun($arr,$curid,$proid);
+        $res = $this->DBObj->getRows($sql);
+        if($res){ 
+            return true;
+        }else{ 
+            return false;
+        }
+    }
+    //========================添加结束===========================
+    //=========================修改开始==========================
+    public function updateProduct($input_arr,$product_id)
+    { 
+        $sql = upsqlproduct($input_arr,$product_id);
+        $res = $this->DBObj->getRows($sql);
+        if($res){ 
+            return true;
+        }else{ 
+            return false;
+        }
+    }
+    //=========================修改结束==========================
     //==========================删除==================================
     //删除商品
     public function delProduct($id)
@@ -106,6 +163,18 @@ class selproduct
         }else{ 
             return false;
         }
+    }
+    //删除限定商品下的价格
+    public function delprice($id)
+    { 
+        $sql = "delete from t_product_price where product_id = ".$id;
+        $res = $this->DBObj->getRows($sql);
+        if($res){ 
+            return true;
+        }else{ 
+            return false;
+        }
+        
     }
     //========================删除结束================================
 }
