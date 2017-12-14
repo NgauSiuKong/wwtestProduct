@@ -131,11 +131,17 @@ class selproduct
         */
         $sql = upInsertPriceFun($arr,$curid,$proid);
         $res = $this->DBObj->getRows($sql);
-        if($res){ 
+        if($res>0){ 
             return true;
         }else{ 
             return false;
         }
+    }
+    public function insertProduct($arr)
+    { 
+        $sql = insqlproduct($arr);
+        $res_id = $this->DBObj->getAddId($sql);
+        return $res_id;
     }
     //========================添加结束===========================
     //=========================修改开始==========================

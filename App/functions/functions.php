@@ -38,3 +38,14 @@ function upsqlproduct($arr,$id){
     $sql = $start.trim($middle,',').$ending;
     return $sql;
 }
+function insqlproduct($arr){ 
+    $start = "INSERT INTO `t_product` ";
+    $val = "";
+    $key = "";
+    foreach($arr as $k => $v){ 
+        $key .= "`".$k."`,";
+        $val .= "'".$v."',";
+    }
+    $sql = $start."(".trim($key,',').") VALUES(".trim($val,',').")";
+    return $sql;
+}

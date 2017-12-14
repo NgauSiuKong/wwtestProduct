@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-12-13 03:25:08
+/* Smarty version 3.1.31, created on 2017-12-14 13:03:11
   from "D:\install\wamp64\www\wwtestProduct\active\templates\header.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5a309d94ad0c84_59188416',
+  'unifunc' => 'content_5a32060f3553b2_78609169',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b2e0bdd1418a181d61c9db4a9051dfbf1f982cf4' => 
     array (
       0 => 'D:\\install\\wamp64\\www\\wwtestProduct\\active\\templates\\header.html',
-      1 => 1513135499,
+      1 => 1513227777,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a309d94ad0c84_59188416 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a32060f3553b2_78609169 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html><head>
@@ -125,25 +125,19 @@ function content_5a309d94ad0c84_59188416 (Smarty_Internal_Template $_smarty_tpl)
                 <!-- /Page Sidebar Header -->
                 <!-- Sidebar Menu -->
                 <ul class="nav sidebar-menu">
-                    <!--Dashboard-->
-                    <li>
-                        <a href="http://www.chuanke.com/s2260700.html" target="_blank" class="menu-dropdown">
-                            <i class="menu-icon fa fa-user"></i>
-                            <span class="menu-text">ThinkPHP5视频教程</span>
-                            <i class="menu-expand"></i>
-                        </a>                            
-                    </li> 
+                    <!--Dashboard--> 
                     <li>
                         <a href="#" class="menu-dropdown">
                             <i class="menu-icon fa fa-user"></i>
-                            <span class="menu-text">管理员</span>
+                            <span class="menu-text">产品列表</span>
                             <i class="menu-expand"></i>
                         </a>
                         <ul class="submenu">
                             <li>
-                                <a href="/admin/document/index.html">
+                                <a href="./index.php">
                                     <span class="menu-text">
-                                        管理列表                                    </span>
+                                        产品列表 
+                                    </span>
                                     <i class="menu-expand"></i>
                                 </a>
                             </li>

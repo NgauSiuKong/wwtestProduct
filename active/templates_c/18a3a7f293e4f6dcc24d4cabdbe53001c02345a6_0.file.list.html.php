@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-12-12 08:04:28
+/* Smarty version 3.1.31, created on 2017-12-14 01:57:22
   from "D:\install\wamp64\www\wwtestProduct\active\templates\list.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5a2f8d8c4c9ef9_14681226',
+  'unifunc' => 'content_5a31da82d53ba4_18569982',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '18a3a7f293e4f6dcc24d4cabdbe53001c02345a6' => 
     array (
       0 => 'D:\\install\\wamp64\\www\\wwtestProduct\\active\\templates\\list.html',
-      1 => 1513065841,
+      1 => 1513216624,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.html' => 1,
   ),
 ),false)) {
-function content_5a2f8d8c4c9ef9_14681226 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a31da82d53ba4_18569982 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -43,7 +43,7 @@ $_smarty_tpl->_subTemplateRender("file:header.html", $_smarty_tpl->cache_id, $_s
                 <!-- Page Body -->
                 <div class="page-body">
                     
-<button type="button" tooltip="添加用户" class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = '/admin/user/add.html'"> <i class="fa fa-plus"></i> Add
+<button type="button" tooltip="添加用户" class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = './add.php?handle=display'"> <i class="fa fa-plus"></i> Add
 </button>
 <div class="row">
     <div class="col-lg-12 col-sm-12 col-xs-12">
