@@ -1,5 +1,5 @@
 <?php
-    define('__HOST__','www.niushao.net');
+    define('__HOST__','112.74.31.36');
     define('__USER__','niushao');
     define('__PASS__','niushao');
     define('__DB__','wwtest');
